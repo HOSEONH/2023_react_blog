@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 function ColorSchemesExample() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand href="#home">블로그</Navbar.Brand>
           <Nav className="me-auto">
