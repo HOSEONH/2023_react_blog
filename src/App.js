@@ -1,5 +1,5 @@
 // 리액트 부트스트랩을 사용하기 위해서는 css추가 필요
-import  'bootstrap/dist/css/bootstrap.min.css' ;
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // 리액트 슬릭을 사용하기위해 css추가
@@ -31,7 +31,7 @@ function App() {
   // 상위 데이터값을 하위에서 공유하기때문에 동일한 값이 출력
 
   // 유저 데이터 
-  // 처음 값 null, "",[], 더미데이터로 내용 확인 후 선택
+  // 처음 값 null, "", [], 더미데이터로 내용 확인 후 선택
   // 처음 값을 null 두었을때 주의점
   // null과 undefined는 속성을 가질수 없기때문에
   // 속성에 접근하면 오류가 난다.
@@ -40,6 +40,8 @@ function App() {
   // map() 메소드를 쓸수 없으므로 주의
 
   // { name: "green" }
+  const result = useState();
+  // result[0], result[1] 각각의 인덱스로 접근
   const [user, setUser] = useState(
     null
   );
@@ -47,15 +49,15 @@ function App() {
   const [boardlist, setBoardlist] = useState(
     [
       {
-        id:1,
-        title : " 첫번째 게시물",
+        id : 1,
+        title : "첫번째 게시물",
         content : "게시물의 내용을 작성합니다",
         name : "green",
         date : "2023-04-27"
       },
       {
-        id:2,
-        title : " 두번째 게시물",
+        id : 2,
+        title : "두번째 게시물",
         content : "게시물의 내용을 작성합니다",
         name : "blue",
         date : "2023-04-27"
@@ -64,7 +66,7 @@ function App() {
   );
 
   // id값을 1씩 증가하는 함수
-  const addId = ()=>{
+  const addId = () => {
     id = id +1;
   }
 
@@ -79,12 +81,12 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/boardlist' element={<Boardlist boardlist={boardlist} />}/>
-          <Route path='/boardlist/:id' element={<Board boardlist={boardlist} />} />
+          <Route path='/boardlist' element={<Boardlist boardlist = {boardlist} />}/>
+          <Route path='/boardlist/:id' element={<Board boardlist = {boardlist} />} />
           <Route path='/boardform' element={<BoardForm 
-                                              setBoardlist={setBoardlist} 
-                                              boardlist={boardlist} 
-                                              user={user} id={id} addId={addId} />}/>
+                                              setBoardlist = {setBoardlist} 
+                                              boardlist = {boardlist} 
+                                              user = {user} id = {id} addId = {addId} />}/>
 
           <Route path='/loginform' element={<LoginForm setUser={setUser} />}/>
         </Routes>
